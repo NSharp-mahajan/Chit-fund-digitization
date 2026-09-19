@@ -165,7 +165,7 @@ export const mockDashboardData: DashboardData = {
   riskAlerts: [
     {
       id: 'risk-1',
-      memberId: 'm-02',
+      memberId: 'CL-002',
       memberName: 'Aman Verma',
       avatarInitials: 'AV',
       riskLevel: 'Medium',
@@ -174,7 +174,7 @@ export const mockDashboardData: DashboardData = {
     },
     {
       id: 'risk-2',
-      memberId: 'm-05',
+      memberId: 'CL-003',
       memberName: 'Priya Singh',
       avatarInitials: 'PS',
       riskLevel: 'High',
@@ -183,7 +183,7 @@ export const mockDashboardData: DashboardData = {
     },
     {
       id: 'risk-3',
-      memberId: 'm-09',
+      memberId: 'CL-007',
       memberName: 'Neha Kapoor',
       avatarInitials: 'NK',
       riskLevel: 'Medium',
