@@ -7,7 +7,6 @@ export function DashboardPreview() {
 
   return (
     <div
-      id="product"
       className="rounded-[16px] border border-border bg-card p-4 shadow-(--shadow-preview) sm:p-5"
     >
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -46,7 +45,7 @@ export function DashboardPreview() {
         </article>
       </div>
 
-      <article id="ai-risk" className="mt-3 rounded-[12px] border border-border p-3.5">
+      <article className="mt-3 rounded-[12px] border border-border p-3.5">
         <p className="text-[11px] font-medium text-muted">Risk Telemetry</p>
         <p className="mt-1.5 text-[20px] leading-none font-bold tracking-tight text-navy">
           {risk.value}{' '}
