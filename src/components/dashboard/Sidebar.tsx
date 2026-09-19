@@ -10,7 +10,7 @@ interface SidebarProps {
 const navItems = [
   { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, exact: true },
   { label: 'Members', href: '/members', icon: Users },
-  { label: 'Auction & Ledger', href: '/ledger', icon: Gavel },
+  { label: 'Auction & Ledger', href: '/auction', icon: Gavel },
   { label: 'Risk Monitoring', href: '/risk', icon: ShieldAlert },
   { label: 'Settings', href: '/settings', icon: Settings },
 ]

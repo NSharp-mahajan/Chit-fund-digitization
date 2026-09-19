@@ -7,6 +7,7 @@ import DashboardPage from '@/pages/DashboardPage'
 import Members from '@/pages/Members.jsx'
 import MemberDetails from '@/pages/MemberDetails.jsx'
 import RiskPage from '@/pages/RiskPage'
+import AuctionPage from '@/pages/AuctionPage'
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
         <Route path="/members" element={<Members />} />
         <Route path="/members/:id" element={<MemberDetails />} />
         <Route path="/risk" element={<RiskPage />} />
+        <Route path="/auction" element={<AuctionPage />} />
+        <Route path="/ledger" element={<AuctionPage />} />
       </Routes>
     </BrowserRouter>
   )
