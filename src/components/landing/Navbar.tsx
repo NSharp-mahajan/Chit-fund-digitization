@@ -1,5 +1,7 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Show, UserButton } from '@clerk/react'
 import { Logo } from '@/components/landing/Logo'
 import { Button } from '@/components/ui/button'
 import { navLinks } from '@/data/landing'
@@ -10,7 +12,9 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-card/94 backdrop-blur-[6px]">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5">
-        <Logo />
+        <Link to="/" onClick={() => setOpen(false)}>
+          <Logo />
+        </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
@@ -25,10 +29,24 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-1.5 lg:flex">
-          <Button variant="ghost" size="sm">
-            Sign In
-          </Button>
-          <Button size="sm">Get Started</Button>
+          <Show when="signed-out">
+            <Link to="/sign-in">
+              <Button variant="ghost" size="sm">
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/sign-up">
+              <Button size="sm">Get Started</Button>
+            </Link>
+          </Show>
+          <Show when="signed-in">
+            <Link to="/dashboard">
+              <Button variant="ghost" size="sm" className="mr-2">
+                Dashboard
+              </Button>
+            </Link>
+            <UserButton />
+          </Show>
         </div>
 
         <button
@@ -56,10 +74,26 @@ export function Navbar() {
             ))}
           </nav>
           <div className="mt-4 flex gap-2">
-            <Button variant="outline" className="flex-1">
-              Sign In
-            </Button>
-            <Button className="flex-1">Get Started</Button>
+            <Show when="signed-out">
+              <Link to="/sign-in" className="flex-1">
+                <Button variant="outline" className="w-full">
+                  Sign In
+                </Button>
+              </Link>
+              <Link to="/sign-up" className="flex-1">
+                <Button className="w-full">Get Started</Button>
+              </Link>
+            </Show>
+            <Show when="signed-in">
+              <Link to="/dashboard" className="flex-1">
+                <Button variant="outline" className="w-full">
+                  Dashboard
+                </Button>
+              </Link>
+              <div className="flex items-center justify-center p-2">
+                <UserButton />
+              </div>
+            </Show>
           </div>
         </div>
       ) : null}
