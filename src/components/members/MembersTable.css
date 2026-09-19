@@ -1,0 +1,239 @@
+/* MembersTable.css — Enhanced members data table */
+
+.members-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid #e6ebf1;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px -8px rgba(21, 32, 51, 0.12);
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 760px;
+}
+
+/* Header */
+.members-table thead tr {
+  border-bottom: 1px solid #e6ebf1;
+}
+
+.members-table th {
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #7a8796;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  background: #f8fafb;
+}
+
+.members-table th:first-child { border-radius: 15px 0 0 0; }
+.members-table th:last-child  { border-radius: 0 15px 0 0; }
+
+.members-table__th-center { text-align: center; }
+
+/* Rows */
+.members-table__row {
+  border-bottom: 1px solid #f0f3f7;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.members-table__row:last-child {
+  border-bottom: none;
+}
+
+.members-table__row:hover {
+  background: #f8fafb;
+}
+
+.members-table__row:focus-visible {
+  outline: 2px solid #0e7c6b;
+  outline-offset: -2px;
+}
+
+.members-table td {
+  padding: 14px 18px;
+  color: #152033;
+  vertical-align: middle;
+}
+
+/* Member cell */
+.members-table__member-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.members-table__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #152033 0%, #243247 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.members-table__name {
+  font-weight: 600;
+  color: #152033;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.3;
+}
+
+.members-table__email {
+  font-size: 11.5px;
+  color: #7a8796;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ID chip */
+.members-table__id {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 11.5px;
+  color: #5d6b7c;
+  background: #f4f6f8;
+  border: 1px solid #e6ebf1;
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+/* Amounts */
+.members-table__amount {
+  font-weight: 700;
+  color: #152033;
+  white-space: nowrap;
+  font-size: 13.5px;
+}
+
+.members-table__amount--pending {
+  color: #a06c10;
+}
+
+.members-table__nil {
+  color: #c8d0da;
+  font-weight: 500;
+}
+
+/* Auctions */
+.members-table__auctions-cell {
+  text-align: center;
+}
+
+.members-table__auction-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(91, 110, 232, 0.08);
+  color: #3d50c8;
+  font-size: 12.5px;
+  font-weight: 700;
+  border: 1px solid rgba(91, 110, 232, 0.18);
+}
+
+/* View button */
+.members-table__view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1px solid #e6ebf1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #243247;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+  white-space: nowrap;
+}
+
+.members-table__view-btn:hover {
+  background: #f4f6f8;
+  border-color: #0e7c6b;
+  color: #0e7c6b;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.badge__dot--low    { background: #0e7c6b; }
+.badge__dot--medium { background: #d99923; }
+.badge__dot--high   { background: #d23737; }
+
+.badge--paid    { background: rgba(14,124,107,0.08); color: #0b6558; border: 1px solid rgba(14,124,107,0.18); }
+.badge--pending { background: rgba(217,153,35,0.08); color: #a06c10; border: 1px solid rgba(217,153,35,0.2); }
+.badge--overdue { background: rgba(210,55,55,0.07);  color: #b52c2c; border: 1px solid rgba(210,55,55,0.18); }
+.badge--low     { background: rgba(14,124,107,0.08); color: #0b6558; border: 1px solid rgba(14,124,107,0.18); }
+.badge--medium  { background: rgba(217,153,35,0.08); color: #a06c10; border: 1px solid rgba(217,153,35,0.2); }
+.badge--high    { background: rgba(210,55,55,0.07);  color: #b52c2c; border: 1px solid rgba(210,55,55,0.18); }
+
+/* ── Empty state ── */
+.members-table-empty {
+  background: #ffffff;
+  border: 1px solid #e6ebf1;
+  border-radius: 16px;
+  padding: 64px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.members-table-empty__icon {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 4px;
+  opacity: 0.6;
+}
+
+.members-table-empty__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #152033;
+  margin: 0;
+}
+
+.members-table-empty__sub {
+  font-size: 13.5px;
+  color: #7a8796;
+  margin: 0;
+}

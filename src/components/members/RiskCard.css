@@ -1,0 +1,285 @@
+/* RiskCard.css — AI Risk Monitoring card */
+
+.risk-card {
+  background: #ffffff;
+  border: 1px solid #e6ebf1;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px -18px rgba(21, 32, 51, 0.22);
+  overflow: hidden;
+}
+
+.risk-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #f0f3f7;
+  background: #f8fafb;
+}
+
+.risk-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.risk-card__ai-icon {
+  display: flex;
+  align-items: center;
+  color: #5b6ee8;
+}
+
+.risk-card__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #152033;
+  margin: 0;
+}
+
+.risk-card__explain-btn {
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  background: #5b6ee8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.12s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.risk-card__explain-btn:hover {
+  background: #4a5dd8;
+  transform: translateY(-1px);
+}
+
+.risk-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.risk-card__score-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.risk-card__score-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a8796;
+  margin: 0 0 5px;
+}
+
+.risk-card__level {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.risk-card__level--low    { background: rgba(14,124,107,0.08); color: #0b6558; border: 1px solid rgba(14,124,107,0.2); }
+.risk-card__level--medium { background: rgba(217,153,35,0.08); color: #a06c10; border: 1px solid rgba(217,153,35,0.2); }
+.risk-card__level--high   { background: rgba(210,55,55,0.07);  color: #b52c2c; border: 1px solid rgba(210,55,55,0.18);}
+
+.risk-card__score-block { display: flex; flex-direction: column; }
+
+.risk-card__score {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.risk-card__score-max {
+  font-size: 14px;
+  color: #7a8796;
+  font-weight: 500;
+}
+
+.risk-card__score--low    { color: #0b6558; }
+.risk-card__score--medium { color: #a06c10; }
+.risk-card__score--high   { color: #b52c2c; }
+
+.risk-card__bar-wrap { display: flex; flex-direction: column; gap: 6px; }
+
+.risk-card__bar-track {
+  height: 8px;
+  background: #e6ebf1;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.risk-card__bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+.risk-card__bar-fill--low    { background: #0e7c6b; }
+.risk-card__bar-fill--medium { background: #d99923; }
+.risk-card__bar-fill--high   { background: #d23737; }
+
+.risk-card__bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: #aab4be;
+  margin: 0;
+}
+
+.risk-card__reasons { display: flex; flex-direction: column; gap: 8px; }
+
+.risk-card__reasons-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a8796;
+  margin: 0;
+}
+
+.risk-card__reasons-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.risk-card__reason-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: #243247;
+}
+
+.risk-card__reason-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.risk-card__reason-dot--low    { background: #0e7c6b; }
+.risk-card__reason-dot--medium { background: #d99923; }
+.risk-card__reason-dot--high   { background: #d23737; }
+
+/* AI Explanation modal */
+.risk-card__modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(21, 32, 51, 0.42);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.risk-card__modal {
+  background: #ffffff;
+  border: 1px solid #e6ebf1;
+  border-radius: 18px;
+  box-shadow: 0 24px 64px -20px rgba(21, 32, 51, 0.36);
+  width: 100%;
+  max-width: 480px;
+  animation: modal-enter 0.18s ease;
+}
+
+@keyframes modal-enter {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.risk-card__modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #f0f3f7;
+}
+
+.risk-card__modal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.risk-card__modal-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #152033;
+  margin: 0;
+}
+
+.risk-card__modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e6ebf1;
+  border-radius: 8px;
+  background: #f4f6f8;
+  color: #5d6b7c;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.risk-card__modal-close:hover {
+  background: #e6ebf1;
+}
+
+.risk-card__modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.risk-card__modal-level {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.risk-card__modal-level--low    { background: rgba(14,124,107,0.08); color: #0b6558; border: 1px solid rgba(14,124,107,0.2); }
+.risk-card__modal-level--medium { background: rgba(217,153,35,0.08); color: #a06c10; border: 1px solid rgba(217,153,35,0.2); }
+.risk-card__modal-level--high   { background: rgba(210,55,55,0.07);  color: #b52c2c; border: 1px solid rgba(210,55,55,0.18);}
+
+.risk-card__modal-text {
+  font-size: 13.5px;
+  color: #243247;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.risk-card__modal-disclaimer {
+  font-size: 11.5px;
+  color: #7a8796;
+  margin: 0;
+  padding: 10px 12px;
+  background: #f4f6f8;
+  border-radius: 8px;
+  border: 1px solid #e6ebf1;
+  line-height: 1.5;
+}

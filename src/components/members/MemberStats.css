@@ -1,0 +1,101 @@
+/* MemberStats.css — Enhanced summary cards */
+
+.member-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .member-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .member-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.member-stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e6ebf1;
+  border-top: 3px solid transparent;
+  border-radius: 16px;
+  padding: 18px 20px 16px;
+  box-shadow: 0 4px 16px -10px rgba(21, 32, 51, 0.16);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+  overflow: hidden;
+}
+
+.member-stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  border-radius: 15px;
+  background: radial-gradient(circle at top right, currentColor 0%, transparent 70%);
+}
+
+.member-stat-card:hover {
+  box-shadow: 0 8px 28px -12px rgba(21, 32, 51, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Accent top border per variant */
+.member-stat-card--blue  { border-top-color: #5b6ee8; }
+.member-stat-card--green { border-top-color: #0e7c6b; }
+.member-stat-card--amber { border-top-color: #d99923; }
+.member-stat-card--red   { border-top-color: #d23737; }
+
+.member-stat-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member-stat-card__label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #7a8796;
+}
+
+.member-stat-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.member-stat-card--blue  .member-stat-card__icon-wrap { background: rgba(91,110,232,0.09); }
+.member-stat-card--green .member-stat-card__icon-wrap { background: rgba(14,124,107,0.09); }
+.member-stat-card--amber .member-stat-card__icon-wrap { background: rgba(217,153,35,0.09); }
+.member-stat-card--red   .member-stat-card__icon-wrap { background: rgba(210,55,55,0.09); }
+
+.member-stat-card__value {
+  font-size: 30px;
+  font-weight: 800;
+  color: #152033;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+}
+
+.member-stat-card__trend {
+  font-size: 11.5px;
+  color: #7a8796;
+  margin: 0;
+  font-weight: 500;
+}
+
+.member-stat-card--blue  .member-stat-card__trend { color: #5b6ee8; }
+.member-stat-card--green .member-stat-card__trend { color: #0b6558; }
+.member-stat-card--amber .member-stat-card__trend { color: #a06c10; }
+.member-stat-card--red   .member-stat-card__trend { color: #b52c2c; }
