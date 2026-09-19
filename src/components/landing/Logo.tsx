@@ -1,6 +1,6 @@
 export function Logo({ className }: { className?: string }) {
   return (
-    <a href="#top" className={`flex items-center gap-2.5 ${className ?? ''}`}>
+    <span className={`flex items-center gap-2.5 ${className ?? ''}`}>
       <span className="flex h-9 w-9 items-center justify-center" aria-hidden>
         <svg viewBox="0 0 36 36" className="h-9 w-9" fill="none">
           <path
@@ -18,6 +18,6 @@ export function Logo({ className }: { className?: string }) {
       <span className="text-[17px] font-bold tracking-tight text-navy">
         ChitLedger
       </span>
-    </a>
+    </span>
   )
 }

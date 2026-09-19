@@ -6,6 +6,7 @@ import SignUpPage from '@/pages/SignUpPage'
 import DashboardPage from '@/pages/DashboardPage'
 import Members from '@/pages/Members.jsx'
 import MemberDetails from '@/pages/MemberDetails.jsx'
+import RiskPage from '@/pages/RiskPage'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/members" element={<Members />} />
         <Route path="/members/:id" element={<MemberDetails />} />
+        <Route path="/risk" element={<RiskPage />} />
       </Routes>
     </BrowserRouter>
   )
